@@ -24,11 +24,15 @@ public class BankAccount {
     }
 
     public void withdraw(int amount) throws NoBabloException {
-        if (amount <= balance) {
-            this.balance -= amount;
-            System.out.println("Со счета снято " + amount + ", текущий баланс: " + balance);
+        if (amount > 0) {
+            if (amount <= balance) {
+                this.balance -= amount;
+                System.out.println("Со счета снято " + amount + ", текущий баланс: " + balance);
+            } else {
+                throw new NoBabloException("На вашем счете недостаточно средств");
+            }
         } else {
-            throw new NoBabloException("На вашем счете недостаточно средств");
+            throw new NoBabloException("Сумма не может быть отрицательной");
         }
     }
 

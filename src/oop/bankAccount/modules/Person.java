@@ -19,5 +19,4 @@ public class Person {
     public String getAge() {
         return "Возраст владельца счета: " + age;
     }
-
 }

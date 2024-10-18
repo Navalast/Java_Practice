@@ -1,0 +1,58 @@
+    **1. Банковский счет:**
+
+    **Уровень сложности:** Средний
+
+    **Описание:**
+    Разработайте класс `BankAccount`, который будет представлять банковский счет. Класс
+    должен иметь следующие свойства и методы:
+
+    * **Свойства:**
+        * `accountNumber` (строка) - номер счета.
+        * `balance` (число) - текущий баланс на счете.
+        * `owner` (объект класса `Person`) - владелец счета.
+
+    * **Методы:**
+        * `deposit(amount: number)` - метод для пополнения счета на указанную сумму.
+        * `withdraw(amount: number)` - метод для снятия указанной суммы со счета. Если на счете
+    недостаточно средств, метод должен выбрасывать исключение.
+        * `transfer(amount: number, targetAccount: BankAccount)` - метод для перевода указанной
+    суммы на другой счет. Если на счете недостаточно средств, метод должен выбрасывать
+    исключение.
+        * `getAccountInfo()` - метод, возвращающий строку с информацией о счете (номер счета,
+    баланс, информация о владельце).
+
+    **Дополнительно:**
+    * Реализуйте класс `Person`, который будет представлять владельца счета. У класса `Person`
+    должны быть свойства `firstName`, `lastName` и `age`.
+    * Реализуйте метод `getFullName()` в классе `Person`, который будет возвращать полное имя
+    владельца.
+    * Реализуйте метод `getAge()` в классе `Person`, который будет возвращать возраст
+    владельца.
+
+    **Пример использования:**
+    ```python
+    # Создаем объекты класса Person
+    john = Person("John", "Doe", 30)
+    jane = Person("Jane", "Doe", 25)
+    # Создаем объекты класса BankAccount
+    account1 = BankAccount("123456789", 1000, john)
+    account2 = BankAccount("987654321", 500, jane)
+    # Выводим информацию о счетах
+    print(account1.getAccountInfo())
+    print(account2.getAccountInfo())
+    # Пополняем счет
+    account1.deposit(500)
+    # Снимаем деньги со счета
+    account1.withdraw(200)
+    # Переводим деньги на другой счет
+    account1.transfer(300, account2)
+    # Выводим обновленную информацию о счетах
+    print(account1.getAccountInfo())
+    print(account2.getAccountInfo())
+    ```
+    **Ожидаемый вывод:**
+    ```
+    Account number: 123456789, Balance: 1000, Owner: John Doe, 30 years old
+    Account number: 987654321, Balance: 500, Owner: Jane Doe, 25 years old
+    Account number: 123456789, Balance: 1000, Owner: John Doe, 30 years old
+    Account number: 987654321, Balance: 800, Owner: Jane Doe, 25 years old

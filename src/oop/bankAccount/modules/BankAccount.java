@@ -32,13 +32,17 @@ public class BankAccount {
         }
     }
 
-    public void transfer(BankAccount accountNumber, int amount) throws NoBabloException {
-        if (amount <= balance) {
-            this.balance -= amount;
-            accountNumber.balance += amount;
-            System.out.println("Сумма " + amount + " переведена на счет: " + accountNumber.accountNumber);
+    public void transfer(BankAccount targetAccount, int amount) throws NoBabloException {
+        if (amount > 0) {
+            if (amount <= balance) {
+                this.balance -= amount;
+                targetAccount.balance += amount;
+                System.out.println("Сумма " + amount + " переведена на счет: " + targetAccount.accountNumber);
+            } else {
+                throw new NoBabloException("Недостаточно средств для перевода");
+            }
         } else {
-            throw new NoBabloException("Недостаточно средств для перевода");
+            throw new NoBabloException("Сумма не может быть отрицательной");
         }
     }
 

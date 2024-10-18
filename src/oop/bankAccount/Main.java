@@ -1,11 +1,12 @@
 package oop.bankAccount;
 
 import oop.bankAccount.exception.NoBabloException;
+import oop.bankAccount.exception.NoCorrectAgeException;
 import oop.bankAccount.modules.BankAccount;
 import oop.bankAccount.modules.Person;
 
 public class Main {
-    public static void main(String[] args) throws NoBabloException {
+    public static void main(String[] args) throws NoBabloException, NoCorrectAgeException {
 
         Person victor = new Person(22, "Виктор", "Колюшев");
         System.out.println(victor.getFullName());

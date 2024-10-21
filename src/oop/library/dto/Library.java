@@ -59,6 +59,7 @@ public class Library {
 
     public void getReadersInfo() {
         System.out.println("Список читателей:");
+
         for (Reader r : readers) {
             System.out.println(r);
         }

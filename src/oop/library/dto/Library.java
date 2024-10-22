@@ -6,9 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Library {
+
     private List<Book> books = new LinkedList<>();
     private List<Reader> readers = new LinkedList<>();
-
 
     public void addBook(Book newBook) {
         this.books.add(newBook);

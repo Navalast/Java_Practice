@@ -47,7 +47,5 @@ public class LibMain {
 
         System.out.println("-----------------");
         library.getBorrowedBooks();
-
-
     }
 }
